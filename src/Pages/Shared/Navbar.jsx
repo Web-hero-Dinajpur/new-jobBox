@@ -19,8 +19,10 @@ const Navbar = () => {
 
 
     const Links = <>
-        <li><a>Item 1</a></li>
-        <li><a>Item 3</a></li>
+        <li><a>Home</a></li>
+        <li><a>Home</a></li>
+        <li><a>Home</a></li>
+       
     </>
     return (
         <div className="navbar bg-base-100">
