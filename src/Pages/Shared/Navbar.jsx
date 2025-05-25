@@ -1,19 +1,20 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../Context/AuthContext';
+import logoImg from '../../assets/logo-job.png'
 
 const Navbar = () => {
 
-    const {user, signOutUser} = useContext(AuthContext);
+    const { user, signOutUser } = useContext(AuthContext);
 
-    const handleSignOut = () =>{
+    const handleSignOut = () => {
         signOutUser()
-        .then(()=>{
-            console.log('successful sign out')
-        })
-        .catch(()=>{
-            console.log('failed to sign out . stay dont leave ne alone')
-        })
+            .then(() => {
+                console.log('successful sign out')
+            })
+            .catch(() => {
+                console.log('failed to sign out . stay dont leave ne alone')
+            })
     }
 
 
@@ -32,7 +33,12 @@ const Navbar = () => {
                         {Links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+
+                <a className='btn btn-ghost text-xl' href="">
+                    <img className='' src={logoImg} alt="" />
+                    <h3 className='text-3xl'>Job portal</h3>
+                    </a>
+
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -42,11 +48,11 @@ const Navbar = () => {
             <div className="navbar-end">
                 {
                     user ? <>
-                    <button onClick={handleSignOut} className='btn'>Log Out</button>
+                        <button onClick={handleSignOut} className='btn'>Log Out</button>
                     </> : <> <Link to='/register'>Register Now</Link>
-                <button className='btn'> <Link to='/signin'>Sign In</Link></button></>
+                        <button className='btn'> <Link to='/signin'>Sign In</Link></button></>
                 }
-               
+
             </div>
         </div>
     );
